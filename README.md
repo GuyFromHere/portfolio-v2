@@ -1,1 +1,1 @@
-# respinsive-portfolio
+# responsive-portfolio
