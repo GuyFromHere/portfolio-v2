@@ -47,8 +47,9 @@ const getPortfolio = () => {
 			target="_blank"
 			title="Minesweeper game built in vanilla javascript and HTML."
 		>
-			<div class="portfolio" id="minesweeper">
-				<h4>Minesweeper</h4>
+            <div class="portfolio" >
+                <img src="assets/images/minesweeper.png" class="cardImg" id="imgMinesweeper">
+				<div class="portfolioCard">Minesweeper</div>
 			</div>
 		</a>
 		<a
@@ -56,19 +57,19 @@ const getPortfolio = () => {
 			target="_blank"
 			title="A simple app I built with my son as a learning exercise."
 		>
-			<div class="portfolio" id="fart">
-				<h4>Fart Button</h4>
+            <div class="portfolio">
+            <img src="assets/images/fart.png" class="cardImg" id="imgFart">
+				<div class="portfolioCard">Fart Button</div>
 			</div>
 		</a>
-    </div>
-    `;
-  /*  <a
+		<a
 			href="https://adamwheeler81.github.io/project1/"
 			target="_blank"
 			title="Project one for Bootcamp. A gluten-free recipe searcher using th Spoonacular API."
 		>
-			<div class="portfolio" id="gluten">
-				<h4>Gluten-Tootin;</h4>
+            <div class="portfolio">
+            <img src="assets/images/gluten.png" class="cardImg" id="imgGluten">
+				<div class="portfolioCard">Gluten-Tootin;</div>
 			</div>
 		</a>
 		<a
@@ -76,20 +77,24 @@ const getPortfolio = () => {
 			target="_blank"
 			title="Weather dashboard. Uses AJAX and the OpenWeather API to get current weather information by city name."
 		>
-			<div class="portfolio" id="weather">
-				<h4>Weather Dashboard</h4>
+            <div class="portfolio">
+            <img src="assets/images/weather.png" class="cardImg" id="imgWeather">
+				<div class="portfolioCard">Weather Dashboard</div>
 			</div>
-		</a>
+		</
 		<a
 			href="https://github.com/GuyFromHere/NoteTaker"
 			target="_blank"
 			title="Node, Express, EJS, MongoDB, Bootstrap. Another work-inspired project. A simple interface for documenting service calls and other useful information."
 		>
-			<div class="portfolio" id="note">
-				<h4>Note Taker</h4>
+            <div class="portfolio">
+            <img src="assets/images/note.png" class="cardImg" id="imgNote">
+				<div class="portfolioCard">Note Taker</div>
 			</div>
 		</a>
-    </div> */
+        
+    </div>
+    `;
 };
 
 function showForm() {

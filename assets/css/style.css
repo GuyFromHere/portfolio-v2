@@ -3,9 +3,9 @@
 }
 
 .row::after {
-  content: "";
+  /* content: ""; */
   clear: both;
-  /* display: table; */
+  display: table;
 }
 
 [class*="col-"] {
@@ -55,7 +55,7 @@ html {
 }
 
 .header {
-  background-color: #9933cc;
+  background-color: #0099cc;
   color: #ffffff;
   padding: 15px;
 }
@@ -84,7 +84,7 @@ html {
 }
 
 /*              */
-/* contact.html */
+/* contact */
 /*              */
 
 #contact {
@@ -116,86 +116,53 @@ form {
 
 #submit {
   border: none;
-  background: #4aaaa5;
+  background: #0099cc;
   color: #ffffff;
   padding: 5px 15px;
   text-align: center;
 }
 
 /*                */
-/* portfolio.html */
+/* .portfolioCard */
 /*                */
-/* 
-#portfolio {
+
+.portfolio {
   position: relative;
-  height: 608px;
-}
-
-.portfolio {
-  position: absolute;
-  height: 180px;
-  width: 280px;
-  margin: 20px;
-  border: 1px solid black;
-  text-align: center;
-}*/
-
-.portfolio {
-  float: left;
-
-  padding: 15px;
-  width: 41.5%;
-  margin: 20px;
+  /* float: left; */
+  /* text-align: center; */
+  padding: 10px;
+  width: 40%;
+  margin: auto 10px;
   background-repeat: no-repeat;
 }
 
-#minesweeper {
+.portfolioCard {
   /* left: 0;
   top: 0; */
-  background-image: url("../images/minesweeper.png");
-}
-
-#fart {
-  /* left: 320px;
-  top: 0px; */
-  background-image: url("../images/fart.png");
-}
-
-#gluten {
-  left: 0;
-  top: 200px;
-  background-image: url("../images/gluten.png");
-}
-
-#msud {
-  left: 320px;
-  top: 200px;
-  background-image: url("../images/msud.png");
-}
-
-#weather {
-  left: 320px;
-  top: 200px;
-  background-image: url("../images/weather.png");
-}
-
-#note {
-  left: 0;
-  top: 420px;
-  background-image: url("../images/note.png");
-}
-
-.portfolio h4 {
-  background: #4aaaa5;
+  /* background-image: url("../images/minesweeper.png"); */
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  background: #0099cc;
+  font-size: 16pt;
+  font-weight: bold;
+  text-align: center;
   color: #ffffff;
   padding: 10px 0;
-  margin-top: 120px;
 }
 
-@media only screen and (max-width: 768px) {
-  /* For mobile phones: */
+.cardImg {
+  width: 100%;
+}
+
+@media only screen and (max-width: 414px) {
   [class*="col-"],
   .portfolio {
     width: 100%;
+  }
+  .content {
+    text-align: center;
   }
 }
