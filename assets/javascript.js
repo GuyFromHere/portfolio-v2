@@ -37,62 +37,87 @@ const aboutText = `<p>
 // portfolio
 const projects = [
 	{
+		id: 1,
 		url: "https://adamwheeler81.github.io/project1/",
 		title: "Project one for Bootcamp. A gluten-free recipe searcher using th Spoonacular API.",
 		img: "assets/images/gluten.png",
-		id: "imgGluten",
+		imgid: "imgGluten",
 		header: "Gluten-Tootin",
 		repo: "https://github.com/adamwheeler81/project1/"
 	},
 	{
+		id: 2,
 		url: "https://unit15project2.herokuapp.com/",
 		title:
 			"Project two for Bootcamp. A full featured new app using MySql, Node, Passport, Handlebars, and the NewsApi API.",
 		img: "assets/images/tickr.png",
-		id: "imgTickr",
+		imgid: "imgTickr",
 		header: "Tickr",
 		repo: "https://github.com/adamwheeler81/project2/"
 	},
 	{
+		id: 3,
 		url: "https://guyfromhere.github.io/weather-dash",
 		title:
 			"Weather dashboard. Uses AJAX and the OpenWeather API to get current weather information by city name.",
 		img: "assets/images/weather.png",
-		id: "imgWeather",
+		imgid: "imgWeather",
 		header: "Weather Dashboard",
 		repo: "https://github.com/GuyFromHere/weather-dash/"
 	},
 	{
+		id: 4,
 		url: "https://guyfromhere.github.io/day-planner/",
 		title: "Day planner app.",
 		img: "assets/images/planner.png",
-		id: "imgPlanner",
+		imgid: "imgPlanner",
 		header: "Day Planner",
 		repo: "https://github.com/GuyFromHere/day-planner/"
 	},
 	{
+		id: 5,
 		url: "https://guyfromhere.github.io/",
 		title: "Minesweeper game built in vanilla javascript and HTML.",
 		img: "assets/images/minesweeper.png",
-		id: "imgMinesweeper",
+		imgid: "imgMinesweeper",
 		header: "Minesweeper",
 		repo: "https://github.com/GuyFromHere/minesweeper/"
 	},
 	{
+		id: 6,
 		url: "https://guyfromhere.github.io/fart-button/",
 		title: "A simple app I built with my son as a learning exercise.",
 		img: "assets/images/fart.png",
-		id: "imgFart",
+		imgid: "imgFart",
 		header: "Fart Button",
 		repo: "https://github.com/GuyFromHere/fart-button/"
 	},
 	{
+		id: 7,
 		url: "https://guyfromhere.github.io/ZedSaid/",
 		title: "An app to track my daughter's ridiculous insults.",
 		img: "assets/images/zed.png",
-		id: "imgZed",
+		imgid: "imgZed",
 		header: "Zed Said",
 		repo: "https://github.com/GuyFromHere/zedsaid/"
+	},
+	{
+		id: 8,
+		url: "https://still-coast-92855.herokuapp.com/",
+		title: "A simple note taking app.",
+		img: "assets/images/notes.png",
+		imgid: "imgNotes",
+		header: "Notes",
+		repo: "https://github.com/GuyFromHere/Notes"
+	},
+	{
+		id: 9,
+		url: "https://agile-brushlands-67640.herokuapp.com/",
+		title: "A small app demonstrating MVC principles.",
+		img: "assets/images/burger.png",
+		imgid: "imgBurger",
+		header: "Burger",
+		repo: "https://github.com/GuyFromHere/burger"
 	}
 ];
 
@@ -146,18 +171,16 @@ const getPortfolio = () => {
 	let portfolioDivEnd = `</div>`;
 	projects.forEach(item => {
 		portfolioDivStart += `
-        <a href="${item.url}"
-            target="_blank"
-            title="${item.title}"
-        >
-            <div class="portfolio">
-                <img src="${item.img}" class="cardImg" id="${item.id}">
+            <div class="portfolio" onclick="showLinks(${item.id})">
+                <img src="${item.img}" class="cardImg" id="${item.imgid}" alt="${item.title}">
                 <div class="portfolioCard">
-                    ${item.header}
-                        <a href="${item.repo}" target="_blank">GitHub</a>
+					${item.header}
+					<div id="${item.id}" class="links">
+						<a href="${item.url}" target="_blank">Check it out!</a>
+						<a href="${item.repo}" target="_blank">GitHub</a>
+					</div>
                 </div>
-            </div>
-        </a>`;
+            </div>`;
 	});
 	portfolioDivStart += portfolioDivEnd;
 	elContent.innerHTML = portfolioDivStart;
@@ -174,3 +197,14 @@ document.getElementById("btnContact").addEventListener("click", () => {
 document.getElementById("btnPortfolio").addEventListener("click", () => {
 	getPortfolio();
 });
+
+const showLinks = (elId) => {
+	const target = document.getElementById(elId);
+	if ( target.style.display == "block" ) {
+		//alert('block');
+		target.style.display = "none";
+	} else {
+		target.style.display = "block";
+	}
+	
+}
