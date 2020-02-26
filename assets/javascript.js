@@ -41,7 +41,6 @@ const projects = [
 		url: "https://adamwheeler81.github.io/project1/",
 		title: "Project one for Bootcamp. A gluten-free recipe searcher using th Spoonacular API.",
 		img: "assets/images/gluten.png",
-		imgid: "imgGluten",
 		header: "Gluten-Tootin",
 		repo: "https://github.com/adamwheeler81/project1/"
 	},
@@ -51,7 +50,6 @@ const projects = [
 		title:
 			"Project two for Bootcamp. A full featured new app using MySql, Node, Passport, Handlebars, and the NewsApi API.",
 		img: "assets/images/tickr.png",
-		imgid: "imgTickr",
 		header: "Tickr",
 		repo: "https://github.com/adamwheeler81/project2/"
 	},
@@ -61,7 +59,6 @@ const projects = [
 		title:
 			"Weather dashboard. Uses AJAX and the OpenWeather API to get current weather information by city name.",
 		img: "assets/images/weather.png",
-		imgid: "imgWeather",
 		header: "Weather Dashboard",
 		repo: "https://github.com/GuyFromHere/weather-dash/"
 	},
@@ -70,7 +67,6 @@ const projects = [
 		url: "https://guyfromhere.github.io/day-planner/",
 		title: "Day planner app.",
 		img: "assets/images/planner.png",
-		imgid: "imgPlanner",
 		header: "Day Planner",
 		repo: "https://github.com/GuyFromHere/day-planner/"
 	},
@@ -79,7 +75,6 @@ const projects = [
 		url: "https://guyfromhere.github.io/",
 		title: "Minesweeper game built in vanilla javascript and HTML.",
 		img: "assets/images/minesweeper.png",
-		imgid: "imgMinesweeper",
 		header: "Minesweeper",
 		repo: "https://github.com/GuyFromHere/minesweeper/"
 	},
@@ -88,7 +83,6 @@ const projects = [
 		url: "https://guyfromhere.github.io/fart-button/",
 		title: "A simple app I built with my son as a learning exercise.",
 		img: "assets/images/fart.png",
-		imgid: "imgFart",
 		header: "Fart Button",
 		repo: "https://github.com/GuyFromHere/fart-button/"
 	},
@@ -97,7 +91,6 @@ const projects = [
 		url: "https://guyfromhere.github.io/ZedSaid/",
 		title: "An app to track my daughter's ridiculous insults.",
 		img: "assets/images/zed.png",
-		imgid: "imgZed",
 		header: "Zed Said",
 		repo: "https://github.com/GuyFromHere/zedsaid/"
 	},
@@ -106,7 +99,6 @@ const projects = [
 		url: "https://still-coast-92855.herokuapp.com/",
 		title: "A simple note taking app.",
 		img: "assets/images/notes.png",
-		imgid: "imgNotes",
 		header: "Notes",
 		repo: "https://github.com/GuyFromHere/Notes"
 	},
@@ -115,7 +107,6 @@ const projects = [
 		url: "https://agile-brushlands-67640.herokuapp.com/",
 		title: "A small app demonstrating MVC principles.",
 		img: "assets/images/burger.png",
-		imgid: "imgBurger",
 		header: "Burger",
 		repo: "https://github.com/GuyFromHere/burger"
 	}
@@ -172,12 +163,13 @@ const getPortfolio = () => {
 	projects.forEach(item => {
 		portfolioDivStart += `
             <div class="portfolio" onclick="showLinks(${item.id})">
-                <img src="${item.img}" class="cardImg" id="${item.imgid}" alt="${item.title}">
+                <img src="${item.img}" class="cardImg" alt="${item.title}">
                 <div class="portfolioCard">
 					${item.header}
 					<div id="${item.id}" class="links">
 						<a href="${item.url}" target="_blank">Check it out!</a>
-						<a href="${item.repo}" target="_blank">GitHub</a>
+						&nbsp;|&nbsp;
+						<a href="${item.repo}" target="_blank">Git Hub</a>
 					</div>
                 </div>
             </div>`;
