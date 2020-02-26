@@ -4,7 +4,7 @@ const email = "dandismuke@gmail.com";
 const github = "https://github.com/GuyFromHere";
 const linkedin = "https://www.linkedin.com/in/dan-dismuke-526a646b/";
 const phone = "503-953-2152";
-const resume = "https://drive.google.com/file/d/131nR7UHCex7TX3JZpOUk_LcjRWvBym6l/view?usp=sharing"
+const resume = "https://drive.google.com/file/d/131nR7UHCex7TX3JZpOUk_LcjRWvBym6l/view?usp=sharing";
 const aboutText = `<p>
     Hello! My name is Dan. I am from the Bay Area originally but I have 
     spent most of my life along the I5 corridor in Oregon. I grew up 
@@ -39,18 +39,17 @@ const aboutText = `<p>
 </p>`;
 
 const getAbout = () => {
-    elContent.innerHTML = "";
-    elContent.innerHTML = `
+	elContent.innerHTML = "";
+	elContent.innerHTML = `
     <h1>About Me</h1>
     <img src="assets/images/aboutme.jpg" id="aboutImg">
         ${aboutText}
-    `
+    `;
 };
 
-
 const getContact = () => {
-    elContent.innerHTML = "";
-    elContent.innerHTML = `
+	elContent.innerHTML = "";
+	elContent.innerHTML = `
     <h1>Contact</h1>
         <div id="contact">
             <div class='email'>
@@ -77,71 +76,88 @@ const getContact = () => {
 	</div >`;
 };
 
+const projects = [
+	{
+		url: "https://adamwheeler81.github.io/project1/",
+		title: "Project one for Bootcamp. A gluten-free recipe searcher using th Spoonacular API.",
+		img: "assets/images/gluten.png",
+		id: "imgGluten",
+		header: "Gluten-Tootin"
+	},
+	{
+		url: "https://unit15project2.herokuapp.com/",
+		title:
+			"Project two for Bootcamp. A full featured new app using MySql, Node, Passport, Handlebars, and the NewsApi API.",
+		img: "assets/images/tickr.png",
+		id: "imgTickr",
+		header: "Tickr"
+	},
+	{
+		url: "https://guyfromhere.github.io/weather-dash",
+		title:
+			"Weather dashboard. Uses AJAX and the OpenWeather API to get current weather information by city name.",
+		img: "assets/images/weather.png",
+		id: "imgWeather",
+		header: "Weather Dashboard"
+	},
+	{
+		url: "https://guyfromhere.github.io/day-planner/",
+		title: "Day planner app.",
+		img: "assets/images/planner.png",
+		id: "imgPlanner",
+		header: "Day Planner"
+	},
+	{
+		url: "https://guyfromhere.github.io/",
+		title: "Minesweeper game built in vanilla javascript and HTML.",
+		img: "assets/images/minesweeper.png",
+		id: "imgMinesweeper",
+		header: "Minesweeper"
+	},
+	{
+		url: "https://guyfromhere.github.io/fart-button/",
+		title: "A simple app I built with my son as a learning exercise.",
+		img: "assets/images/fart.png",
+		id: "imgFart",
+		header: "Fart Button"
+	},
+	{
+		url: "https://guyfromhere.github.io/ZedSaid/",
+		title: "An app to track my daughter's ridiculous insults.",
+		img: "assets/images/zed.png",
+		id: "imgZed",
+		header: "Zed Said"
+	}
+];
+
 const getPortfolio = () => {
-    elContent.innerHTML = `
-    <h1>Portfolio</h1 >
-        <div id="portfolio">
-        <a
-            href="https://adamwheeler81.github.io/project1/"
+	let portfolioDivStart = `<h1>Portfolio</h1 >
+                            <div id="portfolio">`;
+	let portfolioDivEnd = `</div>`;
+	projects.forEach(item => {
+		portfolioDivStart += `
+        <a href="${item.url}"
             target="_blank"
-            title="Project one for Bootcamp. A gluten-free recipe searcher using th Spoonacular API."
+            title="${item.title}"
         >
             <div class="portfolio">
-                <img src="assets/images/gluten.png" class="cardImg" id="imgGluten">
-                    <div class="portfolioCard">Gluten-Tootin;</div>
-			</div>
-		</a>
-        <a
-            href="https://guyfromhere.github.io/weather-dash/"
-            target="_blank"
-            title="Weather dashboard. Uses AJAX and the OpenWeather API to get current weather information by city name."
-        >
-            <div class="portfolio">
-                <img src="assets/images/weather.png" class="cardImg" id="imgWeather">
-                    <div class="portfolioCard">Weather Dashboard</div>
-			</div>
-		</
-		<a
-            href="https://guyfromhere.github.io/day-planner/"
-            target="_blank"
-            title="Day planner app."
-        >
-            <div class="portfolio">
-                <img src="assets/images/planner.png" class="cardImg" id="imgPlanner">
-                <div class="portfolioCard slider">Day Planner</div>
-			</div>
-		</a>
-        <a
-            href="https://guyfromhere.github.io/"
-            target="_blank"
-            title="Minesweeper game built in vanilla javascript and HTML."
-        >
-            <div class="portfolio" >
-                <img src="assets/images/minesweeper.png" class="cardImg" id="imgMinesweeper">
-                <div class="portfolioCard">Minesweeper</div>
-		</div>
-		</a>
-        <a
-            href="https://guyfromhere.github.io/fart-button/"
-            target="_blank"
-            title="A simple app I built with my son as a learning exercise."
-        >
-            <div class="portfolio">
-                <img src="assets/images/fart.png" class="cardImg" id="imgFart">
-                <div class="portfolioCard">Fart Button</div>
-			</div>
-		</a>
-    </div>`;
+                <img src="${item.img}" class="cardImg" id="${item.id}">
+                <div class="portfolioCard">${item.header}</div>
+            </div>
+        </a>`;
+	});
+	portfolioDivStart += portfolioDivEnd;
+	elContent.innerHTML = portfolioDivStart;
 };
 
 document.getElementById("btnAbout").addEventListener("click", () => {
-    getAbout();
+	getAbout();
 });
 
 document.getElementById("btnContact").addEventListener("click", () => {
-    getContact();
+	getContact();
 });
 
 document.getElementById("btnPortfolio").addEventListener("click", () => {
-    getPortfolio();
+	getPortfolio();
 });
