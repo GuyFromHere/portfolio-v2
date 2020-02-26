@@ -1,5 +1,3 @@
-const elContent = document.getElementById("content");
-
 // about page
 const aboutText = `<p>
     Hello! My name is Dan. I am from the Bay Area originally but I have 
@@ -41,8 +39,7 @@ const projects = [
 		title: "Project one for Bootcamp. A gluten-free recipe searcher using th Spoonacular API.",
 		img: "assets/images/gluten.png",
 		id: "imgGluten",
-		header: "Gluten-Tootin",
-		repo: "https://github.com/adamwheeler81/project1/"
+		header: "Gluten-Tootin"
 	},
 	{
 		url: "https://unit15project2.herokuapp.com/",
@@ -50,8 +47,7 @@ const projects = [
 			"Project two for Bootcamp. A full featured new app using MySql, Node, Passport, Handlebars, and the NewsApi API.",
 		img: "assets/images/tickr.png",
 		id: "imgTickr",
-		header: "Tickr",
-		repo: "https://github.com/adamwheeler81/project2/"
+		header: "Tickr"
 	},
 	{
 		url: "https://guyfromhere.github.io/weather-dash",
@@ -59,40 +55,35 @@ const projects = [
 			"Weather dashboard. Uses AJAX and the OpenWeather API to get current weather information by city name.",
 		img: "assets/images/weather.png",
 		id: "imgWeather",
-		header: "Weather Dashboard",
-		repo: "https://github.com/GuyFromHere/weather-dash/"
+		header: "Weather Dashboard"
 	},
 	{
 		url: "https://guyfromhere.github.io/day-planner/",
 		title: "Day planner app.",
 		img: "assets/images/planner.png",
 		id: "imgPlanner",
-		header: "Day Planner",
-		repo: "https://github.com/GuyFromHere/day-planner/"
+		header: "Day Planner"
 	},
 	{
 		url: "https://guyfromhere.github.io/",
 		title: "Minesweeper game built in vanilla javascript and HTML.",
 		img: "assets/images/minesweeper.png",
 		id: "imgMinesweeper",
-		header: "Minesweeper",
-		repo: "https://github.com/GuyFromHere/minesweeper/"
+		header: "Minesweeper"
 	},
 	{
 		url: "https://guyfromhere.github.io/fart-button/",
 		title: "A simple app I built with my son as a learning exercise.",
 		img: "assets/images/fart.png",
 		id: "imgFart",
-		header: "Fart Button",
-		repo: "https://github.com/GuyFromHere/fart-button/"
+		header: "Fart Button"
 	},
 	{
 		url: "https://guyfromhere.github.io/ZedSaid/",
 		title: "An app to track my daughter's ridiculous insults.",
 		img: "assets/images/zed.png",
 		id: "imgZed",
-		header: "Zed Said",
-		repo: "https://github.com/GuyFromHere/zedsaid/"
+		header: "Zed Said"
 	}
 ];
 
@@ -102,75 +93,5 @@ const github = "https://github.com/GuyFromHere";
 const linkedin = "https://www.linkedin.com/in/dan-dismuke-526a646b/";
 const phone = "503-953-2152";
 const resume = "https://drive.google.com/file/d/1pv6jqytz1OWVEwQXQORH0jp0jqUcB5Tk/view?usp=sharing";
-const getAbout = () => {
-	elContent.innerHTML = "";
-	elContent.innerHTML = `
-    <h1>About Me</h1>
-    <img src="assets/images/aboutme.jpg" id="aboutImg">
-        ${aboutText}
-    `;
-};
 
-const getContact = () => {
-	elContent.innerHTML = "";
-	elContent.innerHTML = `
-    <h1>Contact</h1>
-        <div id="contact">
-            <div class='email'>
-                <h4>Email:</h4>
-                ${email}
-            </div>
-            <div class='phone'>
-                <h4>Phone:</h4>
-                ${phone}
-            </div>
-            <div class='github'>
-                <h4>GitHub:</h4>
-                <a href='${github}' target='_blank'>GuyFromHere</a>
-            </div>
-            <div class='linkedin'>
-                <h4>LinkedIn:</h4>
-                <a href='${linkedin}' target='_blank'>LinkedIn</a>
-            </div>
-            <div class='resume'>
-                <h4>Resume:</h4>
-                <a href='${resume}' target='_blank'>Download</a>
-            </div>
-        </div>
-	</div >`;
-};
-
-const getPortfolio = () => {
-	let portfolioDivStart = `<h1>Portfolio</h1 >
-                            <div id="portfolio">`;
-	let portfolioDivEnd = `</div>`;
-	projects.forEach(item => {
-		portfolioDivStart += `
-        <a href="${item.url}"
-            target="_blank"
-            title="${item.title}"
-        >
-            <div class="portfolio">
-                <img src="${item.img}" class="cardImg" id="${item.id}">
-                <div class="portfolioCard">
-                    ${item.header}
-                        <a href="${item.repo}" target="_blank">GitHub</a>
-                </div>
-            </div>
-        </a>`;
-	});
-	portfolioDivStart += portfolioDivEnd;
-	elContent.innerHTML = portfolioDivStart;
-};
-
-document.getElementById("btnAbout").addEventListener("click", () => {
-	getAbout();
-});
-
-document.getElementById("btnContact").addEventListener("click", () => {
-	getContact();
-});
-
-document.getElementById("btnPortfolio").addEventListener("click", () => {
-	getPortfolio();
-});
+export { aboutText, projects, email, github, linkedin, phone, resume };

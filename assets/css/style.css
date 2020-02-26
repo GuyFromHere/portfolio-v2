@@ -116,6 +116,10 @@ ul {
 	width: 300px;
 }
 
+.repo {
+	opacity: 0;
+}
+
 @media only screen and (max-width: 455px) {
 	[class*="col-"],
 	.portfolio {
