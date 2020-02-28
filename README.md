@@ -1,6 +1,6 @@
 # Portfolio
 
-View on [GitHub Pages](https://guyfromhere.github.io/responsive-portfolio/).
+View on [GitHub Pages](https://guyfromhere.github.io/portfolio-v2/).
 
 ## Description
 
