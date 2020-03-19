@@ -10,6 +10,8 @@ A simple portfolio built with HTML and CSS.
 
 Just view the html files in a browser.
 
+!["Portfolio page."](portfolio.png)
+
 ## License
 
 None.
